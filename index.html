@@ -85,7 +85,7 @@ section{scroll-margin-top:64px}
 
 /* ── GALERÍA ── */
 .galeria{padding:clamp(56px,8vw,96px) clamp(24px,6vw,80px);background:var(--cream-dark)}
-.bento{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:260px 260px;gap:10px;border-radius:6px;overflow:hidden}
+.bento{display:grid;grid-template-columns:2fr 1fr 1fr;grid-template-rows:280px 280px;gap:10px;border-radius:6px;overflow:hidden}
 .bento-cell{position:relative;overflow:hidden;cursor:pointer;background:var(--charcoal)}
 .bento-cell.main{grid-row:1/3;grid-column:1/2}
 .bento-cell:hover .bento-hover{opacity:1}
@@ -311,15 +311,21 @@ footer{padding:28px clamp(24px,6vw,80px);background:var(--charcoal);display:flex
   .nav-links{display:none}
   .intro,.ubicacion-inner,.fracc-content,.precio-main,.contacto-inner{grid-template-columns:1fr}
   .bento{grid-template-columns:1fr 1fr;grid-template-rows:auto}
-  .bento-cell.main{grid-row:auto;grid-column:auto}
+  .bento-cell{height:220px}
+  .bento-cell.main{grid-row:auto;grid-column:1/-1;height:300px}
   .espacios-grid{grid-template-columns:1fr 1fr}
   .fracc-stats,.fracc-imgs{grid-template-columns:1fr 1fr}
-  .alberca-ph{display:none}
+  .alberca-ph{display:flex}
+  .alberca-feature{flex-direction:column;align-items:flex-start;min-height:auto}
+  .alberca-content{padding-bottom:32px}
+  .alberca-ph{position:relative;right:auto;top:auto;transform:none;width:100%;height:220px;margin:0 clamp(24px,6vw,80px) 40px;border-radius:6px;width:calc(100% - clamp(48px,12vw,160px))}
 }
 @media(max-width:560px){
   .espacios-grid,.fracc-stats,.precio-features,.fracc-imgs{grid-template-columns:1fr}
   .trust-bar{flex-direction:column;align-items:center}
   .trust-item{border-right:none;border-bottom:1px solid rgba(255,255,255,.08)}
+  .bento-cell{height:180px}
+  .bento-cell.main{height:260px}
 }
 </style>
 </head>
@@ -361,7 +367,7 @@ footer{padding:28px clamp(24px,6vw,80px);background:var(--charcoal);display:flex
     <h1>Tu refugio<br>a 80 minutos<br>de <em>CDMX</em></h1>
     <p class="hero-sub">Casa con alberca, jardín de 250 m² y 4 recámaras en Altos de Oaxtepec, uno de los fraccionamientos más exclusivos de Morelos. Venta directa con el propietario, sin intermediarios.</p>
     <div class="hero-ctas">
-      <a href="https://wa.me/52TUNUMERO" class="btn-hero">
+      <a href="https://wa.me/525524920265" class="btn-hero">
         <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51l-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347"/></svg>
         Escribir por WhatsApp
       </a>
@@ -578,10 +584,13 @@ footer{padding:28px clamp(24px,6vw,80px);background:var(--charcoal);display:flex
     <p class="section-sub">80 minutos que valen cada kilómetro.</p>
   </div>
   <div class="ubicacion-inner rv">
-    <div class="map-placeholder">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="36" height="36"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      <p>Mapa interactivo</p>
-      <p style="font-size:.7rem;opacity:.5">Integra Google Maps aquí</p>
+    <div style="height:320px;border-radius:6px;overflow:hidden;border:1px solid rgba(0,0,0,.08)">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.1!2d-98.97!3d18.90!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85ce0b0b0b0b0b0b%3A0x0!2sAltos+de+Oaxtepec%2C+Yautepec+de+Zaragoza%2C+Morelos!5e0!3m2!1ses!2smx!4v1680000000000!5m2!1ses!2smx&q=Altos+de+Oaxtepec,+Morelos,+Mexico"
+        width="100%" height="100%" style="border:0;display:block"
+        allowfullscreen loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade">
+      </iframe>
     </div>
     <div>
       <div class="distancias">
